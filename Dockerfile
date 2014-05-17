@@ -15,6 +15,7 @@ RUN echo "jenkins:jenkins" | chpasswd
 RUN mkdir /var/run/sshd 
 RUN echo 'root:jenkins' | chpasswd
 RUN apt-get clean
+RUN rm -rf /var/cache/oracle-jdk7-installer
 
 EXPOSE 3333
 CMD    /usr/sbin/sshd -D -p 3333
